@@ -1,0 +1,29 @@
+#canvas {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.pixels  {
+  width: 18px;
+  height: 12.3px;
+  float: left;
+  /*background-color: yellow;*/
+  border: 1px solid black;
+  cursor: crosshair;
+}
+#colorPallet  {
+  width: 800px;
+  height: 150px;
+  border: 1px solid black;
+  margin: 20px auto 0 auto;
+}
+.colorCircles  {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 50%;
+  float: left;
+  margin: 5px;
+  cursor: pointer;
+}

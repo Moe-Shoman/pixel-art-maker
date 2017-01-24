@@ -1,11 +1,23 @@
 const canvas = document.getElementById('canvas');
 const pallet = document.getElementById('colorPallet');
 let brushColor = "rgb(255,255,255)"
+let mouseColor = false;
 for (var i = 0; i < 1400; i++) {
     let pixel = document.createElement('div');
     pixel.className += " pixels";
     pixel.addEventListener("click", function(event) {
         event.target.style.backgroundColor = brushColor;
+    });
+    pixel.addEventListener("mousedown", function (evt) {
+      mouseColor = true;
+    });
+    pixel.addEventListener("mouseover", function (event) {
+      if(mouseColor){
+        event.target.style.backgroundColor = brushColor;
+      }
+    });
+    pixel.addEventListener("mouseup", function (event) {
+      mouseColor = false;
     });
     canvas.appendChild(pixel);
 }
@@ -27,7 +39,7 @@ const colorList = [
     "rgb(0,128,128)",
     "rgb(0,0,128)"
 ];
-for (var i = 1; i <= 16; i++) {
+for (var i = 0; i < colorList.length; i++) {
     let colorIcon = document.createElement('div');
     colorIcon.className += " colorCircles";
     colorIcon.style.backgroundColor = colorList[i];
